@@ -1,0 +1,30 @@
+
+<!--Needs to go into the featureManager element within the server.xml -->
+<feature>appSecurity-3.0</feature>
+<feature>ldapRegistry-3.0</feature>
+
+<!--To be inserted in server.xml file -->
+
+    <basicRegistry id="basic" realm="SampleBasicRealm">
+          <user name="admin" password="password" />
+          <user name="user1" password="password" />
+              <user name="user2" password="password" />
+          <group name="memberlessGroup" />
+          <group name="adminGroup">
+              <member name="admin"/>
+          </group>
+          <group name="users">
+              <member name="user1"/>
+              <member name="user2"/>
+          </group>
+      </basicRegistry>
+
+      <ldapRegistry baseDN="o=acme.com" host="ldap.acme.com"
+      		ldapType="IBM Tivoli Directory Server" port="636" realm="AcmeLdap"
+          bindDN="cn=testuser,o=acme.com" bindPassword="mypassword"
+      		sslEnabled="true" sslRef="LDAPSSLSettings" >
+</ldapRegistry>
+
+<ssl id="LDAPSSLSettings" keyStoreRef="LDAPKeyStore" trustStoreRef="LDAPTrustStore" />
+<keyStore id="LDAPKeyStore" location="server1/resources/security/key.jks" type="JKS" password="password" />
+<keyStore id="LDAPTrustStore" location="server1/resources/security/trust.jks" type="JKS" password="password" />

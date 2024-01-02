@@ -1,0 +1,85 @@
+/* Assigment #3 - Lucas Saucer */
+
+/* Changes all fonts */
+
+* {
+  color: darkblue;
+  font-family: Helvetica, sans-serif;
+}
+
+/* Stylizes the borders of the table */
+
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+th, td {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+th {
+  font-weight: bold;
+}
+
+h1 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* This section changes the way links behave */
+
+a:link {
+ background-color: white;
+ text-decoration: none;
+}
+
+a:visited {
+ background-color: white;
+ text-decoration: line-through;
+}
+
+a:hover {
+ background-color: lightblue;
+ text-decoration: underline;
+ color:black;
+}
+
+a:active {
+ background-color: white;
+ text-decoration: underline;
+}
+
+/* Changes the background color and opacity of preselected rows */
+
+#header {
+  background-color: lightgray;
+  opacity: 0.6;
+}
+#blankRowOne {
+  background-color: lightgray;
+  opacity: 0.6;
+}
+#blankRowTwo {
+  background-color: lightgray;
+  opacity: 0.6;
+}
+#blankRowThree {
+  background-color: lightgray;
+  opacity: 0.6;
+}
+#blankRowFour {
+  background-color: lightgray;
+  opacity: 0.6;
+}
+#blankRowFive {
+  background-color: lightgray;
+  opacity: 0.6;
+}
+
+/* Changes the font of just the names of websites */
+
+#siteName {
+  font-style: italic;
+}

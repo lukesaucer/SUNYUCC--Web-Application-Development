@@ -1,0 +1,25 @@
+
+<!--Needs to go into the featureManager element within the server.xml -->
+<feature>socialLogin-1.0</feature>
+
+<!--To be inserted into the server.xml file -->
+
+<googleLogin clientId="your_app_id" clientSecret="your_app_secret"  />
+<githubLogin   clientid="your_app_id"          clientSecret="your_app_secret"  />
+<facebookLogin clientId="your_app_id"          clientSecret="your_app_secret"  />
+<linkedinLogin clientId="your_app_id"          clientSecret="your_app_secret"  />
+<twitterLogin  consumerKey="your_app_id"       consumerSecret="your_app_secret"/>
+
+<!-- protected applications need to have a security constraint defined -->
+<application type="war" id="formlogin" name="formlogin" location="server1/apps/formlogin.war">
+    <application-bnd>
+        <security-role name="Employee">
+            <special-subject type="ALL_AUTHENTICATED_USERS" />
+        </security-role>
+    </application-bnd>
+</application>
+
+
+<socialLoginWebapp enableLocalAuthentication="true">
+
+<ldapRegistry id="ldap" ...> ... </ldapRegistry>

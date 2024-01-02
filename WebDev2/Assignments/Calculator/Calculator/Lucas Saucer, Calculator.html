@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Lucas Saucer - Midterm Assignment -->
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body class="w3-light-gray">
+
+  <div class="w3-display-container w3-display-middle">
+    <div class="w3-card-4 w3-dark-grey" style="width:100%">
+      <div class="w3-container w3-center">
+        <h3>Calculator</h3>
+<div ng-app="CalculatorApp" ng-controller="CalculatorController">
+  <p><input type="number" ng-model="a"></p>
+  <p><input type="number" ng-model="b"></p>
+  <p><select ng-model="operator">
+        <option>+</option>
+        <option>*</option>
+        <option>-</option>
+        <option>/</option>
+     </select></p>
+  <p>{{ result() }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <script>
+ angular.module('CalculatorApp', [])
+    .controller('CalculatorController', function($scope) {
+        $scope.result = function() {
+        if ($scope.operator == '+') {
+          return $scope.a + $scope.b;
+          }
+        if ($scope.operator == '-') {
+            return $scope.a - $scope.b;
+          }
+        if ($scope.operator == '*') {
+            return $scope.a * $scope.b;
+          }
+        if ($scope.operator == '/') {
+            return $scope.a / $scope.b;
+          }
+        };
+    });
+</script>
+</body>
+</html>
